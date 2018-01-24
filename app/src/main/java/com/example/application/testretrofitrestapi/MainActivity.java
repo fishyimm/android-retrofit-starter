@@ -61,10 +61,12 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
                 Log.i("onResponse", String.valueOf(response.body().size()) );
                 Log.i("onResponse", response.body().toString() );
-                if(response.body().size() > 0) {
-                    for(Post post : response.body()) {
-                        Log.i("getId", post.getId().toString() );
-                        Log.i("getTitle", post.getTitle().toString() );
+                if(response.body() != null) {
+                    if(response.body().size() > 0) {
+                        for(Post post : response.body()) {
+                            Log.i("getId", post.getId().toString() );
+                            Log.i("getTitle", post.getTitle().toString() );
+                        }
                     }
                 }
             }
@@ -87,10 +89,12 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 Log.i("onResponse", String.valueOf(response.body().size()) );
                 Log.i("onResponse", response.body().toString() );
-                if(response.body().size() > 0) {
-                    for(User user : response.body()) {
-                        Log.i("getname", user.getName().toString() );
-                        Log.i("getWebsite", user.getWebsite().toString() );
+                if(response.body() != null) {
+                    if(response.body().size() > 0) {
+                        for(User user : response.body()) {
+                            Log.i("getname", user.getName().toString() );
+                            Log.i("getWebsite", user.getWebsite().toString() );
+                        }
                     }
                 }
             }
